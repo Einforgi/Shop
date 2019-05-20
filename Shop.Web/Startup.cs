@@ -31,6 +31,10 @@ namespace Shop.Web
                 cfg.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            // La siguiente línea es para que nos injecte datos automáticamente mediante la clase
+            // SeedDb que hemos creado para ese propósito
+            services.AddTransient<SeedDb>();
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.

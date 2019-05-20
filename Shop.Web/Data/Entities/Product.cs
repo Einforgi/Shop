@@ -7,7 +7,7 @@
     {
         public int Id { get; set; }
 
-        [MaxLength(50)]
+        [MaxLength(50, ErrorMessage ="El campo {0} no puede tener más de {1} caracteres.")]
         [Required]
         [Display(Name = "Nombre")]
         public string Name { get; set; }

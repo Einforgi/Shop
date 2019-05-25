@@ -10,9 +10,9 @@
     // nos sirve para no tener que estar entrando datos de ejemplo
     // cada vez que los necesitemos, porque se haya borrado la base
     // de datos o por cualquier otro motivo. En este caso creamos 3
-    // productos... Para que se ejecture esta clase, habrá que hacer
-    // unos cambios tanto en Program.cs como en Startup.cs, que son 
-    // las clases que se ejecutan primeramente al correr el proyecto.
+    // productos... Para que se ejecute esta clase, habrá que hacer
+    // unos cambios tanto en "Program.cs" como en "Startup.cs", que son 
+    // las clases que se ejecutan inicialmente al correr el proyecto.
     
     public class SeedDb
     {

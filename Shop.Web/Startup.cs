@@ -35,6 +35,20 @@ namespace Shop.Web
             // SeedDb que hemos creado para ese propósito
             services.AddTransient<SeedDb>();
 
+            // La siguiente línea es para injectar la interface "IRepositoy" pero con la
+            // implementación de la clase "Repositoy.cs"
+            services.AddScoped<IRepository, Repository>();
+
+            // Nota: Con las dos líneas de código anteriores, hemos visto dos maneras
+            // de injectar información en la base de datos local; el "AddTransient" tiene
+            // un ciclo de vida más corto que el "AddScoped", es decir, se usa una vez y se destruye.
+            // Cuando ejecutamos la aplicación, el AddTransient<SeedDb> llama al "seeder" para injectar
+            // información en la base de datos en caso que no tuviese datos, realizando la injección
+            // de la clase "SeedDb" y, una vez hecho eso, no queda la injección viva, sino que actua
+            // acto seguido el "recolector de basura"; mientras que con la acción "AddScoped",
+            // la injección queda permanente durante toda la ejecución de la aplicación, para que sea
+            // reusada las veces que sean necesarias.
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.

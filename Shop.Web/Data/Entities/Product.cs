@@ -31,5 +31,10 @@
         [Display(Name = "Existencias")]
         [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = false)]
         public double Stock { get; set; }
+
+        // Al poner la siguiente línea, estoy configurando una relación de uno a varios,
+        // es decir, le estamos diciendo que todo producto lo crea un sólo usuario, por lo que
+        // un usuario tiene muchos productos
+        public User User { get; set; }
     }
 }
